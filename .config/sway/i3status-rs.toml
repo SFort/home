@@ -1,0 +1,28 @@
+theme = "solarized-dark"
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+interval = 40
+
+[[block]]
+block = "disk_space"
+path = "/mnt/T4"
+alias = "/T4"
+interval = 40
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+
+[[block]]
+block = "cpu"
+interval = 2
+
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
+

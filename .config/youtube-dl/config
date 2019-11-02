@@ -1,0 +1,6 @@
+-f bestvideo[ext=mp4][height<1200]+bestaudio[ext=m4a]/bestvideo[ext=webm][height<1200]+bestaudio[ext=webm]/bestvideo[height<1200]+bestaudio/best[height<1200]/best
+--download-archive archive.txt
+--output %(uploader)s/%(upload_date)s.%(title)s.%(id)s.%(ext)s
+--restrict-filenames
+--merge-output-format mp4
+--ignore-errors

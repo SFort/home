@@ -1,0 +1,5 @@
+[user]
+	email = github@ssf.tf
+	name = SFort
+[credential]
+	helper = store
