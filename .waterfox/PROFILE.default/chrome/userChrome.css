@@ -1,0 +1,7 @@
+notification[value="drmContentDisabled"]{
+ display:none !important;
+}
+#navigator-toolbox[inFullscreen] toolbar:not([collapsed="true"]) {
+   visibility:visible!important;
+}
+
