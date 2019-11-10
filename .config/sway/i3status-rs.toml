@@ -1,4 +1,8 @@
 theme = "solarized-dark"
+
+[[block]]
+block = "focused_window"
+
 [[block]]
 block = "disk_space"
 path = "/"
@@ -15,14 +19,22 @@ interval = 40
 block = "memory"
 display_type = "memory"
 format_mem = "{Mup}%"
+format_swap = "{Mup}%"
+
+[[block]]
+block = "pacman"
 
 [[block]]
 block = "cpu"
 interval = 2
 
+[[block]]
+block = "sound"
+step_width = 2
+on_click ="amixer set Master toggle > /dev/null"
 
 [[block]]
 block = "time"
-interval = 60
-format = "%a %d/%m %R"
+interval = 30
+format = "%a %d|%m %T"
 
