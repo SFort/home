@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Steam -Games
+Exec=/usr/bin/steam-runtime -console -voice_quality 3 -dev -tcp -no-browser steam://open/minigameslist
+Terminal=false
+Type=Application
+Categories=Game;
+MimeType=x-scheme-handler/steam;
+
+[Desktop Action Servers]
+Name=Servers
+Exec=steam steam://open/servers
+
+[Desktop Action Friends]
+Name=Friends
+Exec=steam steam://open/friends

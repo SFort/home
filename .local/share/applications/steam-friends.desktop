@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Steam -Friends
+Exec=/usr/bin/steam-runtime -console -voice_quality 3 -dev -tcp -no-browser steam://open/friends
+Terminal=false
+Type=Application
+Categories=Game;
+MimeType=x-scheme-handler/steam;
