@@ -22,9 +22,6 @@ format_mem = "{Mup}%"
 format_swap = "{Mup}%"
 
 [[block]]
-block = "pacman"
-
-[[block]]
 block = "cpu"
 interval = 2
 

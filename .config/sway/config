@@ -106,7 +106,6 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
 #WIndow class start restrictions
-assign [class="Wire"] $ws2
 assign [app_id="liferea"] $ws1
 assign [class="Steam" title="Steam"] $ws3
 assign [class="Steam"] $ws2

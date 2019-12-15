@@ -1,0 +1,2 @@
+slurp | grim -g - /tmp/screenshot.png &&
+wl-copy - < /tmp/screenshot.png
