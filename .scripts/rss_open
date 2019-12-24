@@ -1,16 +1,10 @@
 #!/bin/bash
 
-if echo "$1" | pcregrep -q "^https?://w?w?w?.?bitchute.com/embed/*"; then
+if 
+echo "$1" | pcregrep -q "^https?://w?w?w?.?youtube.com/watch/*"||
+echo "$1" | pcregrep -q "^https?://w?w?w?.?bitchute.com/embed/*"||
+echo "$1" | pcregrep -q "^https?://w?w?w?.?twitch.tv/*"; then
    "/usr/bin/mpv" ${*}
    exit 0
 fi
-if echo "$1" | pcregrep -q "^https?://w?w?w?.?youtube.com/watch/*"; then
-   "/usr/bin/mpv" ${*}
-   exit 0
-fi
-if  echo "$1" | pcregrep -q "^https?://w?w?w?.?twitch.tv/*"; then
-   "/home/sfort/.scripts/stream" $1
-   exit 0
-fi
-
 "/usr/bin/xdg-open" ${*}
