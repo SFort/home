@@ -25,6 +25,7 @@ bindsym $mod+Return exec $TERMINAL
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+Control+q xkill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run -nf white -sb white -sf black -l 50
@@ -206,11 +207,11 @@ workspace $ws2 output DP-2
 workspace $ws1 output HDMI-A-1
 
 #Removes borders and titles
-default_border pixel 1
+default_border pixel 2
+hide_edge_borders smart
+
 exec swaymsg border toggle
 exec swaymsg resize grow
-gaps top 0
-gaps inner 10
 
 #Print screen bind
 bindsym Print exec grim -g \"$(slurp)" /tmp/screenshot.png
@@ -223,4 +224,4 @@ exec "export _JAVA_AWT_WM_NONREPARENTING=1"
 #bindsym Alt+v exec clipmenu
 #bindsym $mod+Alt+v exec clipdel -d .
 #exec clipmenud
-
+exec "termite -e arch-audit --hold"
