@@ -4,4 +4,6 @@ notification[value="drmContentDisabled"]{
 #navigator-toolbox[inFullscreen] toolbar:not([collapsed="true"]) {
    visibility:visible!important;
 }
-
+#tabbrowser-tabs .tabbrowser-tab .tab-close-button {
+   display:none!important;
+}
