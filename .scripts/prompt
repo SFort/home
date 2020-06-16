@@ -1,2 +1,5 @@
 #!/bin/sh
-[ $(echo -e "No\nYes" | dmenu -i -nb red -l 2 -sb black -p "$1") \== "Yes" ] && $1
+if [ $(echo "No\nYes" | dmenu -i -nb red -l 2 -sb black -p "$1") = "Yes" ]
+then
+$1 
+fi

@@ -1,1 +1,0 @@
-streamlink -p mpv -a '--cache=no {filename}' --hls-live-edge 1 --hls-segment-threads 2 $1 best

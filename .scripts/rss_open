@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if 
 echo "$1" | pcregrep -q "^https?://w?w?w?.?youtube.com/watch/*"||

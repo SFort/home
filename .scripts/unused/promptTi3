@@ -1,2 +1,0 @@
-#!/bin/sh
-[ $(sam -pitch 70 -mouth 150 "Terminatei3"& disown;echo -e "No\nYes" | dmenu -i -nb red -l 2 -sb black -p "$1") \== "Yes" ]&& $1 
