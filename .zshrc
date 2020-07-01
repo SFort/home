@@ -33,6 +33,8 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+alias rudeps="pacman -Qtdq | trizen -Rns -"
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh/history
 HISTSIZE=100
