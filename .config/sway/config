@@ -179,13 +179,13 @@ bar {
 
 #Custom stuff
 #Background
-output "*" background /home/sfort/images/wallpaper.jpg fill
+output "*" background /home/sfort/images/st_wallpaper.png fill
 #Screen lock bind
 #bindsym XF86ScreenSaver exec "/home/sfort/.scripts/lock"
 bindsym XF86ScreenSaver exec "swaylock -f --inside-color 00000000 -i /home/sfort/images/wallpaper2.jpg"
 
 #Boot desktop settings
-exec "steam -console -voice_quality 3 -tcp -no-browser"
+exec "PRESSURE_VESSEL_SHARE_HOME=0 steam -console -voice_quality 3 -tcp -no-browser"
 # exit i2 (logs you out of your X session)
 bindsym $mod+x exec /home/sfort/.scripts/prompt "swaymsg exit"
 #shutdown shortcut
@@ -199,6 +199,7 @@ output DP-1 pos 1920 0 res 3840x2160
 #scale 2  pos 3840 5760
 output HDMI-A-1 pos 5760 0 res 1920x1080
 
+bindsym $mod+Shift+g output DP-2 pos 0 0 res 1920x1080;output DP-1 pos 1920 0 res 3840x2160 scale 1;output HDMI-A-1 pos 5760 0 res 1920x1080
 bindsym $mod+g output DP-2 pos 0 0 res 1920x1080;output DP-1 pos 1920 0 res 3840x2160 scale 2;output HDMI-A-1 pos 3840 0 res 1920x1080
 #workspace bind to monitors
 workspace $ws7 output DP-2
@@ -217,10 +218,14 @@ exec swaymsg resize grow
 bindsym Print exec grim -g \"$(slurp)" /tmp/screenshot.png
 bindsym Shift+Print exec wl-copy /tmp/screenshot.png
 
+
+bindsym $mod+Home exec /home/sfort/.scripts/toggleDisplay
 #fix java windows
 exec "export _JAVA_AWT_WM_NONREPARENTING=1"
 
 #clipmenu
+
+bindsym $mod+quotedbl exec /home/sfort/.scripts/clip
 #bindsym Alt+v exec clipmenu
 #bindsym $mod+Alt+v exec clipdel -d .
 #exec clipmenud
