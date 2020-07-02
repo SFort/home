@@ -1,0 +1,2 @@
+#!/bin/sh
+cat ~/.txt/clip/$(ls -1 ~/.txt/clip | rofi -dmenu -theme Monokai) | wl-copy
