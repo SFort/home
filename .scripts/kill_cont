@@ -1,0 +1,2 @@
+#!/bin/sh
+kill -cont $(swaymsg -t get_tree |sed -n '/"focused": true,/,$p' |grep -m 1 -Po '(?<="pid":)(.*?)(?=,)')

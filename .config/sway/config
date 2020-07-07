@@ -230,3 +230,8 @@ bindsym $mod+quotedbl exec /home/sfort/.scripts/clip
 #bindsym $mod+Alt+v exec clipdel -d .
 #exec clipmenud
 exec "termite -e arch-audit --hold"
+
+
+bindsym $mod+r exec /home/sfort/.scripts/kill_cont
+bindsym $mod+l exec /home/sfort/.scripts/kill_stop
+
