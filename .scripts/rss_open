@@ -4,7 +4,11 @@ if
 echo "$1" | pcregrep -q "^https?://w?w?w?.?youtube.com/watch/*"||
 echo "$1" | pcregrep -q "^https?://w?w?w?.?bitchute.com/embed/*"||
 echo "$1" | pcregrep -q "^https?://w?w?w?.?twitch.tv/*"; then
+if pgrep -c jackd | grep -q "0"; then
    "/usr/bin/mpv" ${*}
+else
+   "/usr/bin/mpv" --ao=jack ${*}
+fi
    exit 0
 fi
 "/usr/bin/xdg-open" ${*}
