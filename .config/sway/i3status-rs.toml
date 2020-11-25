@@ -1,23 +1,34 @@
-theme = "solarized-dark"
+theme = "modern"
 
 [[block]]
-block = "focused_window"
+block = "github"
+interval = 300
+format = "{total}G"
+
+[[block]]
+block = "custom"
+command ="ht2000 /dev/hidraw8 |cut -d',' -f3,4,5 --output-delimiter=$'\n' | sed -r 's/^0+|0+$//g' | tr '\n' '|'"
+interval = 2
+
+#[icons]
+#name = "none"
+
+[icons.overrides]
+cpu = "¦ "
+net_up = " ^"
+net_down = " v"
 
 [[block]]
 block = "disk_space"
 path = "/"
-alias = "/"
-interval = 40
-
-[[block]]
-block = "disk_space"
-path = "/mnt/T4"
-alias = "/T4"
+alias = ""
 interval = 40
 
 [[block]]
 block = "memory"
 display_type = "memory"
+icons = false
+clickable = false
 format_mem = "{Mup}%"
 format_swap = "{Mup}%"
 
@@ -26,9 +37,13 @@ block = "cpu"
 interval = 2
 
 [[block]]
-block = "sound"
-step_width = 2
-on_click ="amixer set Master toggle > /dev/null"
+block = "net"
+device = "eno1"
+
+#[[block]]
+#block = "sound"
+#step_width = 2
+#on_click ="amixer set Master toggle > /dev/null"
 
 [[block]]
 block = "time"
