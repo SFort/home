@@ -7,7 +7,7 @@ format = "{total}G"
 
 [[block]]
 block = "custom"
-command ="ht2000 /dev/hidraw8 |cut -d',' -f3,4,5 --output-delimiter=$'\n' | sed -r 's/^0+|0+$//g' | tr '\n' '|'"
+command ="ht2000 /dev/hidraw0 |cut -d',' -f3,4,5 --output-delimiter=$'\n' | sed -r 's/^0+|0+$//g' | tr '\n' '|'"
 interval = 2
 
 #[icons]

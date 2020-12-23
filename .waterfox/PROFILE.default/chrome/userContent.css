@@ -9,8 +9,6 @@ color: #eeeeee !important;
 } 
 }
 
-
-
 @-moz-document url-prefix(){ 
 html  ,
 html *:not(:empty):not(.Emoticon) ,
@@ -515,7 +513,6 @@ body#viewsource .error > :-moz-any(.start-tag, .end-tag, .comment, .cdata, .doct
 span.newmessage
 { color: #f66 !important
 }
-
 
 li#imagebox_bigimages > div,
 #tphdr.tphdr ,
