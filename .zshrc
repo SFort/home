@@ -36,6 +36,10 @@ source $ZSH/oh-my-zsh.sh
 alias rudeps="pacman -Qtdq | trizen -Rns -"
 alias epic="legendary"
 alias gog="wyvern"
+alias yt-desc="youtube-dl --get-description"
+yt-rss(){
+echo "https://www.youtube.com/feeds/videos.xml\?channel_id\=`youtube-dl -j $1 |grep -m 1 -Po '(?<="channel_id":)(.*?)(?=,)' | tr -d '"'|xargs`"
+}
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh/history
