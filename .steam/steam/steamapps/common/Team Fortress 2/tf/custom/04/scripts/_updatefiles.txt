@@ -1,0 +1,7 @@
+everything in the updatefiles folder will be one of the three:
+- tools used by the hud that don't fit into any existing folder
+- things for me to use
+- outdated docs
+
+if you're a hud dev some of these things might be useful
+otherwise they're pretty meh
