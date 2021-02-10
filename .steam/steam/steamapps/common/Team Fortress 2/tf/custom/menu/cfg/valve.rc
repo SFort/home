@@ -11,3 +11,4 @@ exec autoexec.cfg
 stuffcmds
 
 map_background koth_highpass
+alias quit2 "map_background koth_highpass"
