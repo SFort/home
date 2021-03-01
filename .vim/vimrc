@@ -1,5 +1,6 @@
 filetype plugin on
-set number
+filetype plugin indent on
+set number relativenumber
 set mouse=a
 set foldmethod=marker
 set swapfile
@@ -8,7 +9,6 @@ set viminfo+=n~/.vim/viminfo
 syntax enable
 let g:rustfmt_autosave = 1
 let g:syntastic_rust_checkers = ['cargo']
-let g:deoplete#enable_at_startup = 1
 
 "Syntastic
 set statusline+=%#warningmsg#
@@ -18,9 +18,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-set hidden
-let g:racer_experimental_completer = 1
 
 au BufRead /tmp/mutt-* set tw=72
 au FileType rust nmap gd <Plug>(rust-def-vertical)
@@ -47,3 +44,5 @@ nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
 nnoremap j gj
 nnoremap k gk
+au FileType cpp nmap <F4> :!{g++ % && ./a.out}
+command TOpdf hardcopy > %.ps | !{ps2pdf %.ps && rm %.ps}
