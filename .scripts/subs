@@ -1,0 +1,8 @@
+#!/bin/zsh
+#Zsh is absolutley required since it allows overwriting arguments
+mkv=$1
+for a in `seq 1 $#`
+do
+	grep -q "\.mkv$" <<< $@[$a] && mkv=$@[$a] && set -A $a "" && break
+done
+test -n $mkv && mkvmerge -o /tmp/tmp.mkv $mkv $@ && mv /tmp/tmp.mkv $mkv && rm $@
