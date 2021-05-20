@@ -22,7 +22,7 @@ net_down = " v"
 block = "disk_space"
 path = "/"
 alias = ""
-interval = 40
+interval = 3
 
 [[block]]
 block = "memory"
@@ -34,7 +34,7 @@ format_swap = "{Mup}%"
 
 [[block]]
 block = "cpu"
-interval = 2
+interval = 1
 
 [[block]]
 block = "net"
@@ -47,6 +47,6 @@ device = "eno1"
 
 [[block]]
 block = "time"
-interval = 30
+interval = 1
 format = "%a %d|%m %T"
 

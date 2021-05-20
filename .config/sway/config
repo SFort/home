@@ -28,7 +28,7 @@ bindsym $mod+Control+q xkill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run -nf white -sb white -sf black -l 50
-bindsym $mod+e exec rofi -show drun -theme Monokai
+bindsym $mod+e exec j4-dmenu-desktop --term=$TERMINAL --dmenu='GTK_THEME=Adwaita:dark wofi -di'
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -218,9 +218,9 @@ bindsym $mod+quotedbl exec /home/sfort/.scripts/clip
 #bindsym Alt+v exec clipmenu
 #bindsym $mod+Alt+v exec clipdel -d .
 #exec clipmenud
-exec "termite -e arch-audit --hold"
+exec "$TERMINAL -e --hold arch-audit"
 
 
 bindsym $mod+r exec /home/sfort/.scripts/kill_cont
 bindsym $mod+l exec /home/sfort/.scripts/kill_stop
-bindsym Alt+$mod+Return exec mpv "$(wl-paste)"
+bindsym Alt+$mod+Return exec ~/.scripts/rss_open "$(wl-paste)"
