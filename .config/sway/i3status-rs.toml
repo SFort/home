@@ -29,8 +29,8 @@ block = "memory"
 display_type = "memory"
 icons = false
 clickable = false
-format_mem = "{Mup}%"
-format_swap = "{Mup}%"
+format_mem = "{mem_used_percents}%"
+format_swap = "{mem_used_percents}%"
 
 [[block]]
 block = "cpu"
