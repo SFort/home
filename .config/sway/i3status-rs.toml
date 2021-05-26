@@ -4,19 +4,20 @@ theme = "space-villain"
 block = "github"
 interval = 300
 format = "{total}G"
+hide_if_total_is_zero = true
 
-[[block]]
-block = "custom"
-command ="ht2000 /dev/hidraw0 |cut -d',' -f3,4,5 --output-delimiter=$'\n' | sed -r 's/^0+|0+$//g' | tr '\n' '|'"
-interval = 2
-
-#[icons]
-#name = "none"
+#[[block]]
+#block = "custom"
+#command ="ht2000 /dev/hidraw0 |cut -d',' -f3,4,5 --output-delimiter=$'\n' | sed -r 's/^0+|0+$//g' | tr '\n' '|'"
+#interval = 2
 
 [icons.overrides]
-cpu = "¦ "
-net_up = " ^"
-net_down = " v"
+cpu = "¦"
+net_up = "^"
+net_down = "v"
+github = ""
+net_wired = ""
+time = ""
 
 [[block]]
 block = "disk_space"
@@ -29,8 +30,8 @@ block = "memory"
 display_type = "memory"
 icons = false
 clickable = false
-format_mem = "{mem_used_percents}%"
-format_swap = "{mem_used_percents}%"
+format_mem = "{mem_used_percents}"
+format_swap = "{mem_used_percents}"
 
 [[block]]
 block = "cpu"
@@ -39,11 +40,6 @@ interval = 1
 [[block]]
 block = "net"
 device = "eno1"
-
-#[[block]]
-#block = "sound"
-#step_width = 2
-#on_click ="amixer set Master toggle > /dev/null"
 
 [[block]]
 block = "time"
