@@ -1,14 +1,5 @@
 #!/bin/sh
 
-if 
-echo "$1" | pcregrep -q "^https?://w?w?w?.?youtube.com/watch/*"||
-echo "$1" | pcregrep -q "^https?://w?w?w?.?bitchute.com/embed/*"||
-echo "$1" | pcregrep -q "^https?://w?w?w?.?twitch.tv/*"; then
-if pgrep -c jackd | grep -q "0"; then
-   "/usr/bin/mpv" ${*}
-else
-   "/usr/bin/mpv" --ao=jack ${*}
-fi
-   exit 0
-fi
-"/usr/bin/xdg-open" ${*}
+#echo "$1" | grep -Eq "^https?://w?w?w?.?(twitch.tv|youtube.com/watch|bitchute.com/embed)/*" && 
+youtube-dl --download-archive /dev/null -o "/tmp/%(upload_date)s.%(title)s.%(id)s.%(ext)s" --exec 'mpv {}; rm {}' "${*}" || "/usr/bin/xdg-open" ${*}
+#echo "$1" | grep -Eq "^https?://w?w?w?.?twitch.tv/*" &&
