@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ $(echo "No\nYes" | dmenu -i -nb red -l 2 -sb black -p "$1") = "Yes" ]
+if [ $(echo "No\nYes" | bemenu -i -nb red -l 2 -sb black -p "$1") = "Yes" ]
 then
 $1 
 fi
