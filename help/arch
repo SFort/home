@@ -1,0 +1,21 @@
+mkisofs -o image.iso -iso-level 3 FOLDER
+xz -9e --threads=6 image.iso
+growisofs -use-the-force-luke=spare:none,notray -f -Z /dev/sr0=image.iso
+growisofs -use-the-force-luke=spare:none,notray -f -Z /dev/sr0 -iso-level 3 -V LABEL -r -J ./FILE
+
+ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
+mpv --osd-fractions
+isoinfo -l -i image.iso
+eject -T
+
+split -n 2 image.iso half
+cat half* > image.iso
+mv `ls | head -n 5` ..
+
+par2create -rm11925 -t1 -n1 checkS01E01-11 *
+par2create -rm$((23855-`du|cut -f -1` /1000)) -t1 -n1 check *
+
+for a in `seq -w 1 26`; ln /mnt/iso/E$a.mkv $a.mkv
+for b in `seq -w 1 23`; for a in `seq -w 1 30`; ln ../Show_S$b*/*S${b}E${a}* Show_S${b}E${a}.mkv
+b=01; for a in *(.);test $((`du $b|cut -f -1`+`du $a|cut -f -1`)) -lt 23855000 || b=${(l:2::0:)$((b+1))} && mv $a $b/.
+mv `ls -p | grep -v / | head -n 5` 05/.

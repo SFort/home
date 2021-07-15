@@ -1,0 +1,2 @@
+encfs ~/Downloads/Krypt /tmp/unk
+fusermount -u /tmp/unk

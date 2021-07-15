@@ -1,0 +1,1 @@
+LD_LIBRARY_PATH=~/.steam/steam/steamapps/common/Team\ Fortress\ 2/bin ~/.steam/steam/steamapps/common/Team\ Fortress\ 2/bin/vpk_linux32 $@

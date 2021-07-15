@@ -1,0 +1,26 @@
+hudanimations_manifest
+{
+	//load priority goes top to bottom
+	//whatever animations gets loaded first stays, things below it in load priority cannot override it
+	
+	//steals the LevelInit animation from hudanimations.txt
+	//it triggers early u kno
+	"file"		"scripts/hudanimations_init.txt"
+
+	//magnumhud specific
+	"file"		"scripts/hudanimations_magnum.txt"
+	"file"		"scripts/hudanimations_extra.txt"
+
+	//overrides
+	"file"		"overrides/scoperemoval/removescope.txt"
+	"file"		"overrides/nochatbg/nochatbg.txt"
+	"file"		"overrides/scoreboardslidein/file.txt"
+	"file"		"overrides/crosshair_in_scoreboard/file.txt"
+
+	//wiet's tradeup animations, should work by itself
+	"file"		"scripts/hudanimations_uncrating.txt"
+
+	//default stuff
+	"file"		"scripts/hudanimations.txt" //loads from hl2 vpk's
+	"file"		"scripts/hudanimations_tf.txt" //loads from tf2 vpk's
+}
