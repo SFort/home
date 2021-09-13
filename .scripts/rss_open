@@ -1,5 +1,3 @@
 #!/bin/sh
 
-#echo "$1" | grep -Eq "^https?://w?w?w?.?(twitch.tv|youtube.com/watch|bitchute.com/embed)/*" && 
-youtube-dl --download-archive /dev/null -o "/tmp/%(upload_date)s.%(title)s.%(id)s.%(ext)s" --exec 'mpv {}; rm {}' "${*}" || "/usr/bin/xdg-open" ${*}
-#echo "$1" | grep -Eq "^https?://w?w?w?.?twitch.tv/*" &&
+echo "$1" | grep -Eq "^https?://w?w?w?.?(twitch.tv|youtube.com/watch)/*" && mpv "${*}" || "/usr/bin/xdg-open" "${*}"
