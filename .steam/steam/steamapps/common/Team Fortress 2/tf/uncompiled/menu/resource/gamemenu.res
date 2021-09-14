@@ -12,12 +12,6 @@
 		"command" "OpenServerBrowser"
 	} 
 
-	"2"
-	{
-		"label" ">Casual"
-		"command" "OpenMatchmakingLobby"
-	}
-
   	"3"
 	{
 		"label" ""
@@ -85,6 +79,17 @@
 	"label" 	"reload players"
 	"command" 	"engine stop; record fix"
 	"tooltip" 	"Fix Invisible Players"
+	"OnlyInGame"	"1"
+	}
+	"empty"
+	{
+	"label" ""
+	"command" ""
+	}
+	"Disconnect"
+	{
+	"label" "Disconnect"
+	"command" "engine disconnect"
 	"OnlyInGame"	"1"
 	}
 }
