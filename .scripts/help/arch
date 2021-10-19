@@ -2,6 +2,8 @@ mkisofs -o image.iso -iso-level 3 FOLDER
 xz -9e --threads=6 image.iso
 growisofs -use-the-force-luke=spare:none,notray -f -Z /dev/sr0=image.iso
 growisofs -use-the-force-luke=spare:none,notray -f -Z /dev/sr0 -iso-level 3 -V LABEL -r -J ./FILE
+//APPEND
+growisofs -use-the-force-luke=spare:none,notray -f -M /dev/sr0 -iso-level 3 -r -J ./FILE
 
 ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
 mpv --osd-fractions

@@ -1,0 +1,1 @@
+echo "https://www.youtube.com/feeds/videos.xml?channel_id=`youtube-dl -j $1 |grep -m 1 -Po '(?<="channel_id":)(.*?)(?=,)' | tr -d '"'|xargs`"
