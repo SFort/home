@@ -1,3 +1,0 @@
-#!/bin/sh
-
-echo "$1" | grep -Eq "^https?://w?w?w?.?(twitch.tv|youtube.com/watch)/*" && mpv "${*}" || "/usr/bin/xdg-open" "${*}"
