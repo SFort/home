@@ -48,6 +48,9 @@ source $ZSH/oh-my-zsh.sh
 alias rudeps="pacman -Qtdq | trizen -Rns -"
 alias epic="legendary"
 alias gog="wyvern"
+yt-get(){
+for l in "$@"; do;youtube-dl --output %(upload_date)s.%(title)s.%(id)s.%(ext)s -qf 22 $l &; done
+}
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh/history
