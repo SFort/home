@@ -17,13 +17,11 @@
 		"label" ""
 		"command" ""
 	}
-
-
 	
 	"5"
 	{
-		"label" ""
-		"command" ""
+		"label" "PARTY CHAT"
+		"command" "toggle_chat"
 	}
         "9"
 	{
