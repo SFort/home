@@ -16,6 +16,12 @@ html *:after ,
 html *:before{ 
 background-image : none !important
 }
+
+*
+{
+border-radius	 : 0 !important;
+}
+
 html{ 
 background-color : #333 !important;
 border-color     : #444 !important;
