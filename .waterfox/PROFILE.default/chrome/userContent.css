@@ -457,14 +457,6 @@ img:hover
 { background-color: #ccc !important
 }
 
-/*
-FB tohot fix
-*/
-.fbPhotoSnowboxTagBoxes ,
-.tagsWrapper
-
-{ background-color: transparent !important
-}
 /**/
 body#viewsource 
 { margin: 0 !important
