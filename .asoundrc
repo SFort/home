@@ -49,8 +49,8 @@ pcm.duplex {
 pcm.!default {
 	#rate_converter "samplerate"
         type plug
-    	slave.pcm "both"
-	#slave.pcm "duplex"
+    	#slave.pcm "both"
+	slave.pcm "duplex"
 }
 pcm.crea {
 	format S32_LE
