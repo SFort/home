@@ -11,12 +11,17 @@ pcm.obs {
 pcm.dmixe {
 	ipc_key 9921
 	type dmix
-	slave.pcm "crea"
+	slave {
+		pcm "crea"
+		#period_size 1024
+		#buffer_size 2048
+	}
 }
 pcm.dsnoope {
 	ipc_key 9912
 	type dsnoop
 	slave.pcm "hw:3,0"
+	slave.channels 1
 }
 pcm.duplex {
 	type asym
@@ -24,13 +29,11 @@ pcm.duplex {
 	capture.pcm "dsnoope"
 }
 pcm.crea {
-	format S32_LE
-	rate 96000
 	type hw
-	card 0
-	device 0
+	card 1
+	device 1
 }
 ctl.!default {
 	type hw
-	card 0
+	card 1
 }
