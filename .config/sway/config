@@ -188,6 +188,9 @@ output HDMI-A-2 pos 1920 0 mode 3840x2160@120Hz render_bit_depth 10
 output * adaptive_sync off
 output * max_render_time 1
 
+bindsym $mod+Shift+g output HDMI-A-2 scale 1
+bindsym $mod+g output HDMI-A-2 scale 2
+
 #workspace bind to monitors
 workspace $ws7 output DP-1
 workspace $ws3 output HDMI-A-2

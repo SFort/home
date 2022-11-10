@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Steam -Server
-Exec=/usr/bin/steam-runtime -console -voice_quality 3 -dev -tcp -no-browser steam://open/servers
-Terminal=false
-Type=Application
-Categories=Game;

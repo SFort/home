@@ -1,5 +1,15 @@
 [user]
 	email = github@ssf.tf
 	name = SFort
-[credential]
-	helper = store
+[init]
+	defaultBranch = master
+[diff]
+	    tool = meld
+[difftool]
+	    prompt = false
+[difftool "meld"]
+	    cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[pull]
+	rebase = false
+[mergetool]
+	keepBackup = false
