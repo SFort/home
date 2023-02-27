@@ -22,7 +22,7 @@ time = ""
 [[block]]
 block = "disk_space"
 path = "/"
-format = ""
+format = "$available.eng(w:2)"
 interval = 3
 
 [[block]]
