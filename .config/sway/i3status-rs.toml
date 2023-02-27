@@ -1,4 +1,4 @@
-theme = "space-villain"
+theme.theme = "space-villain"
 
 [[block]]
 block = "github"
@@ -22,16 +22,12 @@ time = ""
 [[block]]
 block = "disk_space"
 path = "/"
-alias = ""
+format = ""
 interval = 3
 
 [[block]]
 block = "memory"
-display_type = "memory"
-icons = false
-clickable = false
-format_mem = "{mem_used_percents}"
-format_swap = "{mem_used_percents}"
+format = "$mem_used_percents"
 
 [[block]]
 block = "cpu"
