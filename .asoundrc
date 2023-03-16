@@ -12,7 +12,7 @@ pcm.dmixe {
 	ipc_key 9921
 	type dmix
 	slave {
-		pcm "crea"
+		pcm "hw:3,1"
 		#period_size 1024
 		#buffer_size 2048
 	}
@@ -28,12 +28,7 @@ pcm.duplex {
 	playback.pcm "dmixe"
 	capture.pcm "dsnoope"
 }
-pcm.crea {
-	type hw
-	card 1
-	device 1
-}
 ctl.!default {
 	type hw
-	card 1
+	card 3
 }
