@@ -7,6 +7,9 @@ notification[value="drmContentDisabled"]{
 #navigator-toolbox[inFullscreen] toolbar:not([collapsed="true"]) {
    visibility:visible!important;
 }
+#back-button, #forward-button, #unified-extensions-button, #unified-extensions-button > .toolbarbutton-icon{
+   display:none!important;
+}
 #tabbrowser-tabs .tabbrowser-tab .tab-close-button {
    display:none!important;
 }
