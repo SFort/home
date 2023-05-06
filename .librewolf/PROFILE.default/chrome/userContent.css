@@ -1,3 +1,8 @@
+@-moz-document domain(animeschedule.net) {
+  #custom-consent-wrapper{
+    display: none !important;
+  }
+}
 @-moz-document url-prefix(about:newtab) {
   html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
     background: #323234 !important;
