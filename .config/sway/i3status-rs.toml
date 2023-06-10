@@ -3,7 +3,7 @@ theme.theme = "space-villain"
 [[block]]
 block = "github"
 interval = 300
-format = "{total}G"
+format = "$total G"
 hide_if_total_is_zero = true
 
 #[[block]]
@@ -22,8 +22,14 @@ time = ""
 [[block]]
 block = "disk_space"
 path = "/"
-format = "$available.eng(w:2)"
-interval = 3
+format = "$available.eng(w:2,force_prefix:true,p:G)"
+interval = 5
+
+[[block]]
+block = "disk_space"
+path = "/home"
+format = "$available.eng(w:2,force_prefix:true,p:G)"
+interval = 5
 
 [[block]]
 block = "memory"
@@ -35,7 +41,7 @@ interval = 1
 
 [[block]]
 block = "net"
-device = "eno1"
+device = "eth0"
 
 [[block]]
 block = "time"
