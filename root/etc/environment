@@ -1,0 +1,2 @@
+JAVA_HOME=/lib/jvm/java-17-openjdk
+_JAVA_OPTIONS=-Dorg.lwjgl.glfw.libname=glfw_wayland_minecraft

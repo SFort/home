@@ -181,8 +181,8 @@ bindsym $mod+Shift+x exec /home/sfort/.scripts/prompt "shutdown -h now"
 
 #System monitors
 
-output DP-1 pos 0 0 res 1920x1080
-output HDMI-A-2 pos 1920 0 mode 3840x2160@120Hz render_bit_depth 10
+output HDMI-A-2 pos 0 0 mode 3840x2160@120Hz render_bit_depth 10
+#output HDMI-A-1 pos 0 0 res 1920x1080
 #scale 2  pos 3840 5760
 #output HDMI-A-1 pos 5760 0 res 1920x1080
 output * adaptive_sync off
