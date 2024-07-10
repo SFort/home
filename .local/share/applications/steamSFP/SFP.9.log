@@ -1,4 +1,0 @@
-2024-07-10 20:45:19.7512|INFO|SFP.Models.Log|Initializing SFP version 0.0.54 on platform artix-x64
-2024-07-10 20:45:20.0184|INFO|SFP.Models.Log|Monitoring Steam state
-2024-07-10 20:45:20.1306|WARN|SFP.Models.Log|Steam is not running, cannot inject
-2024-07-10 20:45:24.5104|INFO|SFP.Models.Log|Quitting
