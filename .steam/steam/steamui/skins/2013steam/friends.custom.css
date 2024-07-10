@@ -1,0 +1,8 @@
+@import url(css/universal.css);
+
+@import url(css/friends/friends.css);
+@import url(css/friends/chat.css);
+
+@import url(config.css);
+
+img[src*="292e08d8081d31b104399a99da2b9cdd5c3b7ade"] {display: none !important;}

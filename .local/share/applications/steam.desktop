@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Steam (Runtime)
 Comment=Application for managing and playing games on Steam
-Exec=env PRESSURE_VESSEL_SHARE_HOME=1 /usr/bin/steam -console -dev -no-browser %U
+Exec=~/.local/share/applications/steamSFP/steam.sh %U
 Icon=steam
 Terminal=false
 Type=Application

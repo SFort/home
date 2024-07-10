@@ -1,0 +1,140 @@
+2024-07-10 19:40:38.5554|INFO|SFP.Models.Log|Initializing SFP version 0.0.54 on platform artix-x64
+2024-07-10 19:40:38.7448|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:40:38.8267|INFO|SFP.Models.Log|Monitoring Steam state
+2024-07-10 19:40:38.9797|INFO|SFP.Models.Log|Steam process detected with missing launch arguments, restarting...
+2024-07-10 19:40:38.9910|INFO|SFP.Models.Log|Shutting down Steam
+2024-07-10 19:40:38.9986|INFO|SFP.Models.Log|Checking for updates...
+2024-07-10 19:40:39.3379|INFO|SFP.Models.Log|You are running the latest version.
+2024-07-10 19:40:46.6316|INFO|SFP.Models.Log|Starting Steam
+2024-07-10 19:40:46.9427|ERROR|SFP.Models.Log|Could not fetch browser, SFP either tried to inject too early or another service is running on port 8080
+2024-07-10 19:40:46.9427|DEBUG|SFP.Models.Log|Flurl.Http.FlurlHttpException: Call failed. Connection refused (localhost:8080): GET http://localhost:8080/json/version
+ ---> System.Net.Http.HttpRequestException: Connection refused (localhost:8080)
+ ---> System.Net.Sockets.SocketException (111): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError, CancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs, ValueTask, CancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String, Int32, HttpRequestMessage, Boolean, CancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String, Int32, HttpRequestMessage, Boolean, CancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage, Boolean, CancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage, Boolean, CancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean, CancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage, Boolean, Boolean, CancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage, Boolean, CancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage, HttpCompletionOption, CancellationTokenSource, Boolean, CancellationTokenSource, CancellationToken)
+   at Flurl.Http.FlurlClient.SendAsync(IFlurlRequest, HttpCompletionOption , CancellationToken )
+   --- End of inner exception stack trace ---
+   at Flurl.Http.FlurlClient.HandleExceptionAsync(FlurlCall, Exception, CancellationToken)
+   at Flurl.Http.FlurlClient.SendAsync(IFlurlRequest, HttpCompletionOption , CancellationToken )
+   at Flurl.Http.FlurlClient.SendAsync(IFlurlRequest, HttpCompletionOption , CancellationToken )
+   at Flurl.Http.ResponseExtensions.ReceiveJson[T](Task`1)
+   at SFP.Models.Injection.BrowserEndpoint.GetBrowserEndpointAsync() in /home/runner/work/SFP/SFP/SFP/Models/Injection/BrowserEndpoint.cs:line 28
+   at SFP.Models.Injection.Injector.StartInjectionAsync(Boolean ) in /home/runner/work/SFP/SFP/SFP/Models/Injection/Injector.cs:line 65
+2024-07-10 19:41:46.1312|INFO|SFP.Models.Log|Starting injection...
+2024-07-10 19:41:46.1907|INFO|SFP.Models.Log|Connecting to ws://localhost:8080/devtools/browser/c5ca7ca3-bb06-46e0-a869-dafe5579325d
+2024-07-10 19:41:46.2114|INFO|SFP.Models.Log|Connected
+2024-07-10 19:41:46.2527|INFO|SFP.Models.Log|Found 15 pages
+2024-07-10 19:41:46.2527|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.2527|INFO|SFP.Models.Log|Using default SFP skin config
+2024-07-10 19:41:46.2967|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.2976|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.2976|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.2976|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.3012|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.3097|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Steam from patch ^Steam$
+2024-07-10 19:41:46.3097|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Community Supernav from patch Supernav$
+2024-07-10 19:41:46.3097|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Store Supernav from patch Supernav$
+2024-07-10 19:41:46.3097|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Library Supernav from patch Supernav$
+2024-07-10 19:41:46.3097|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Profile Supernav from patch Supernav$
+2024-07-10 19:41:46.3145|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.3145|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.3145|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.3145|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.3145|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.3145|INFO|SFP.Models.Log|Injected friends.custom.css into Friends List from patch .friendsui-container
+2024-07-10 19:41:46.3145|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.3155|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.3155|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:41:46.3155|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Notifications Menu from patch Menu$
+2024-07-10 19:41:46.3155|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Games Root Menu from patch Menu$
+2024-07-10 19:41:46.3155|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Account Menu from patch Menu$
+2024-07-10 19:41:46.3155|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Friends Root Menu from patch Menu$
+2024-07-10 19:41:46.3167|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Help Root Menu from patch Menu$
+2024-07-10 19:41:46.3167|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Steam Root Menu from patch Menu$
+2024-07-10 19:41:46.3167|INFO|SFP.Models.Log|Injected libraryroot.custom.css into View Root Menu from patch Menu$
+2024-07-10 19:41:46.3167|INFO|SFP.Models.Log|Initial injection finished
+2024-07-10 19:42:48.8017|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:42:48.8028|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:24.3087|INFO|SFP.Models.Log|Disconnecting from Steam instance
+2024-07-10 19:43:24.3087|INFO|SFP.Models.Log|Disconnected from Steam instance
+2024-07-10 19:43:24.8966|INFO|SFP.Models.Log|Starting injection...
+2024-07-10 19:43:24.9534|INFO|SFP.Models.Log|Connecting to ws://localhost:8080/devtools/browser/c5ca7ca3-bb06-46e0-a869-dafe5579325d
+2024-07-10 19:43:24.9554|INFO|SFP.Models.Log|Connected
+2024-07-10 19:43:24.9976|INFO|SFP.Models.Log|Found 15 pages
+2024-07-10 19:43:25.0294|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0478|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0478|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0478|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0478|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0493|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Store Supernav from patch Supernav$
+2024-07-10 19:43:25.0580|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Steam from patch ^Steam$
+2024-07-10 19:43:25.0580|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Community Supernav from patch Supernav$
+2024-07-10 19:43:25.0580|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Profile Supernav from patch Supernav$
+2024-07-10 19:43:25.0580|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Library Supernav from patch Supernav$
+2024-07-10 19:43:25.0580|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0585|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0585|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0585|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0585|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0585|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0585|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0585|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:25.0585|INFO|SFP.Models.Log|Injected friends.custom.css into Friends List from patch .friendsui-container
+2024-07-10 19:43:25.0585|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Friends Root Menu from patch Menu$
+2024-07-10 19:43:25.0585|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Account Menu from patch Menu$
+2024-07-10 19:43:25.0585|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Help Root Menu from patch Menu$
+2024-07-10 19:43:25.0585|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Notifications Menu from patch Menu$
+2024-07-10 19:43:25.0585|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Games Root Menu from patch Menu$
+2024-07-10 19:43:25.0585|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Steam Root Menu from patch Menu$
+2024-07-10 19:43:25.0585|INFO|SFP.Models.Log|Injected libraryroot.custom.css into View Root Menu from patch Menu$
+2024-07-10 19:43:25.0585|INFO|SFP.Models.Log|Initial injection finished
+2024-07-10 19:43:31.8760|INFO|SFP.Models.Log|Shutting down Steam
+2024-07-10 19:43:32.1179|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:43:32.1179|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Shutdown from patch .ModalDialogPopup
+2024-07-10 19:43:36.9127|INFO|SFP.Models.Log|Starting Steam
+2024-07-10 19:43:37.1943|WARN|SFP.Models.Log|Injection already started, skipping injection
+2024-07-10 19:43:38.3555|INFO|SFP.Models.Log|Disconnected from Steam instance
+2024-07-10 19:43:38.8629|WARN|SFP.Models.Log|Unexpected disconnect, trying to reconnect to Steam instance
+2024-07-10 19:43:38.9186|INFO|SFP.Models.Log|Connecting to ws://localhost:8080/devtools/browser/034bcd74-dbef-4274-87de-1286fdb081ca
+2024-07-10 19:43:38.9186|INFO|SFP.Models.Log|Connected
+2024-07-10 19:43:38.9289|INFO|SFP.Models.Log|Found 1 pages
+2024-07-10 19:43:38.9298|INFO|SFP.Models.Log|Initial injection finished
+2024-07-10 19:44:08.6271|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:08.6349|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Steam from patch ^Steam$
+2024-07-10 19:44:09.8344|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8344|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8346|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8346|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8368|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Store Supernav from patch Supernav$
+2024-07-10 19:44:09.8368|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Library Supernav from patch Supernav$
+2024-07-10 19:44:09.8368|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Community Supernav from patch Supernav$
+2024-07-10 19:44:09.8380|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Profile Supernav from patch Supernav$
+2024-07-10 19:44:09.8380|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8380|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8380|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8380|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8380|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8387|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8387|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:09.8397|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Steam Root Menu from patch Menu$
+2024-07-10 19:44:09.8397|INFO|SFP.Models.Log|Injected libraryroot.custom.css into View Root Menu from patch Menu$
+2024-07-10 19:44:09.8397|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Friends Root Menu from patch Menu$
+2024-07-10 19:44:09.8406|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Games Root Menu from patch Menu$
+2024-07-10 19:44:09.8406|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Help Root Menu from patch Menu$
+2024-07-10 19:44:09.8418|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Notifications Menu from patch Menu$
+2024-07-10 19:44:09.8418|INFO|SFP.Models.Log|Injected libraryroot.custom.css into Account Menu from patch Menu$
+2024-07-10 19:44:10.0236|DEBUG|SFP.Models.Log|SelectedSkin is steamui.
+2024-07-10 19:44:10.0247|INFO|SFP.Models.Log|Injected friends.custom.css into Friends List from patch .friendsui-container
+2024-07-10 19:44:37.9763|INFO|SFP.Models.Log|Quitting
