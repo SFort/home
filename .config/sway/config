@@ -1,3 +1,4 @@
+exec pipewire
 set $mod Mod4
 
 input * {
@@ -6,6 +7,14 @@ input * {
 	xkb_numlock "enabled"
 }
 
+#second seat for games
+#input 1130:17:HID_046a:0011 {
+#	xkb_layout "us"
+#	xkb_variant ""
+#	map_to_output "HDMI-A-2"
+#}
+#seat seat1 attach 1130:17:HID_046a:0011
+#seat seat1 attach 1133:49232:Logitech_USB-PS/2_Optical_Mouse
 
 #input 9580:110:HID_256c:006e_Pad map_to_output P-1
 #input 9580:110:HID_256c:006e_Pen map_to_output P-1
@@ -27,7 +36,7 @@ bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+q kill
 bindsym $mod+Control+q xkill
 
-bindsym $mod+quotedbl exec steam_dmenu -o | grep -v 'Proton\|Runtime\|SDK\|SteamVR\|Steamworks' | steam_dmenu -d 'bemenu -ifnl 16 -p steam --fn "Fira Mono 12"'
+bindsym $mod+quotedbl exec {steam_dmenu -o & steam_dmenu -o -l /steamGames/steamapps/;} | grep -v 'Proton\|Runtime\|SDK\|SteamVR\|Steamworks' | steam_dmenu -d 'bemenu -ifnl 16 -p steam --fn "Fira Mono 12"'
 bindsym $mod+e exec j4-dmenu-desktop --term=$TERMINAL --dmenu='bemenu -ifnb --fn "Fira Mono 12"'
 
 # alternatively, you can use the cursor keys:
@@ -185,8 +194,8 @@ output HDMI-A-2 pos 0 0 mode 3840x2160@120Hz render_bit_depth 10
 #output HDMI-A-1 pos 0 0 res 1920x1080
 #scale 2  pos 3840 5760
 #output HDMI-A-1 pos 5760 0 res 1920x1080
-output * adaptive_sync off
-output * max_render_time 1
+#output * adaptive_sync off
+#output * max_render_time 1
 
 bindsym $mod+Shift+g output HDMI-A-2 scale 1
 bindsym $mod+g output HDMI-A-2 scale 2
@@ -207,8 +216,11 @@ bindsym Print exec grim -g \"$(slurp)" /tmp/screenshot.png
 bindsym Shift+Print exec wl-copy /tmp/screenshot.png
 
 
-bindsym $mod+Home exec /home/sfort/.scripts/toggleDisplay
+bindsym $mod+Home output * power on
+bindsym $mod+Shift+Home output * power off
 bindsym $mod+End exec eject -T
+bindsym $mod+Insert input * xkb_variant "dvorak"
+bindsym $mod+Shift+Insert input * xkb_variant ""
 
 #clipmenu
 
