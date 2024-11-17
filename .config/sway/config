@@ -1,3 +1,4 @@
+exec pkill -x "pipewire"
 exec pipewire
 set $mod Mod4
 
@@ -36,7 +37,7 @@ bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+q kill
 bindsym $mod+Control+q xkill
 
-bindsym $mod+quotedbl exec steam_dmenu -o && steam_dmenu -o -l /steamGames/steamapps/ | grep -v 'Proton\|Runtime\|SDK\|SteamVR\|Steamworks' | steam_dmenu -d 'bemenu -ifnl 16 -p steam --fn "Fira Mono 12"'
+bindsym $mod+quotedbl exec (steam_dmenu -o && steam_dmenu -o -l /steamGames/steamapps/) | grep -v 'Proton\|Runtime\|SDK\|SteamVR\|Steamworks' | steam_dmenu -d 'bemenu -ifnl 16 -p steam --fn "Fira Mono 12"'
 bindsym $mod+e exec j4-dmenu-desktop --term=$TERMINAL --dmenu='bemenu -ifnb --fn "Fira Mono 12"'
 
 # alternatively, you can use the cursor keys:
