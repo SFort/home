@@ -51,7 +51,9 @@ alias sway="TERMINAL=/bin/foot sway"
 yt-get(){
 for l in "$@"; do;echo `youtube-dl --download-archive /dev/null --output '%(upload_date)s.%(title)s.%(id)s.%(ext)s' -qf 22 $l || echo "FAILED: $l"` &; done
 }
-
+yt-id(){
+yt-dlp --print channel_url --playlist-items 1 "$1"
+}
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh/history
 HISTSIZE=100
