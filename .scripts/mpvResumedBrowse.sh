@@ -4,13 +4,15 @@ FOLDER="$1"
 mpv --pause --terminal=no --input-terminal=no --idle=yes --force-window=immediate --input-ipc-server=/tmp/mpv-browseB-sock &
 sleep 1
 LAST_DATE_FILE="./browseDate"
-LAST_DATE=$(cat "$LAST_DATE_FILE" 2>/dev/null || echo "1970-01-01")
-for FILE in $(find "$FOLDER" -type f -newermt "$LAST_DATE" -printf "%T@ %p\n" | sort -n | cut -d' ' -f2-); do
+LAST_DATE=$(cat "$LAST_DATE_FILE" 2>/dev/null || echo "0")
+for TFILE in $(find "$FOLDER" -type f -printf "%T@ %p\n" | sort -n | cut -d' ' -f2-); do
+FILE=$(echo "$TFILE" | cut -d' ' -f2-)
+TIME=$(echo "$TFILE" | cut -d' ' -f1)
+[[ "$TIME" < "$LAST_DATE" ]] && continue
 unset DELETE
-FILE=$(realpath "$FILE")
- echo -en "\033[1A\033[2K $FILE Delete? [y/N]"
+ echo -en "\033[1A\033[2K\033[1A\033[2K  $FILE Delete? [y/N]"
 echo "{ \"command\": [\"loadfile\", \"$FILE\"] }" | socat - /tmp/mpv-browseB-sock > /dev/null
 read DELETE
 [[ "$DELETE" == "y" ]] && rm "$FILE"
-date -r "$FILE" +"%Y-%m-%d %H:%M:%S" > "$LAST_DATE_FILE"
+echo "$TIME" > "$LAST_DATE_FILE"
 done
