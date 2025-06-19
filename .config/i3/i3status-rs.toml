@@ -2,8 +2,8 @@ theme.theme = "space-villain"
 
 [[block]]
 block = "github"
-interval = 300
-format = "$total G"
+interval = 150
+format = "$total.eng(w:1) G"
 hide_if_total_is_zero = true
 
 #[[block]]

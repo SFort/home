@@ -1,0 +1,164 @@
+#exec pkill -x "pipewire"
+exec pipewire
+set $mod Mod4
+
+exec_always --no-startup-id xsetroot -cursor_name left_ptr
+exec "setxkbmap -layout 'us' -variant 'dvorak'"
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 12
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+tiling_drag modifier titlebar
+
+bindsym $mod+Return exec $TERMINAL
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+quotedbl exec (steam_dmenu -o && steam_dmenu -o -l /steamGames/steamapps/) | grep -v 'Proton\|Runtime\|SDK\|SteamVR\|Steamworks' | steam_dmenu -d 'dmenu -i -f -p steam'
+bindsym $mod+e exec j4-dmenu-desktop --term=$TERMINAL --dmenu='dmenu -i -f -fn "Fira Mono 12"'
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+z split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+u fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+set $ws1 "1-Web"
+set $ws2 "2-Coms"
+set $ws3 "3-Steam"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws0 "0"
+set $wsTil "~"
+
+# switch to workspace
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+1 workspace $ws1
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+bindsym $mod+Grave workspace $wsTil
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+bindsym $mod+Shift+Grave move container to workspace $wsTil
+
+#WIndow class start restrictions
+assign [class="Steam" title="Steam"] $ws3
+assign [class="Steam"] $ws2
+for_window [class="Steam"] tiling enable
+for_window [title="Wine System Tray"] kill
+
+# reload the configuration file
+bindsym $mod+Shift+r reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+#bindsym $mod+Shift+r restart
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+e mode "default"
+}
+
+bindsym $mod+Shift+e mode "resize"
+
+set $bg-color   #2f344f
+set $bg-color-u #2f343f
+
+
+#Window colors          border          bg              text            indicator       child border
+client.focused          $bg-color       $bg-color       #00aa00         #ff0000         $bg-color
+client.unfocused        $bg-color-u     $bg-color-u     #777777         #ff0000         $bg-color-u
+client.focused_inactive $bg-color-u     $bg-color-u     #777777         #ff0000         $bg-color-u
+client.urgent           #E53935         #E53935         #00aa00         #ff0000         #E53935
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        mode hide
+        status_command env $(cat ~/.scripts/priv/gith | xargs) i3status-rs ~/.config/i3/i3status-rs.toml
+}
+
+bindsym $mod+x exec /home/sfort/.scripts/prompt "i3-msg exit"
+bindsym $mod+Shift+x exec /home/sfort/.scripts/prompt "shutdown -h now"
+
+exec --no-startup-id xrandr --output HDMI-A-1 --mode 3840x2160 --rate 120 --pos 0x0 --primary --output HDMI-A-0 --mode 3840x2160 --pos 3840x0 --rotate left
+default_border pixel 2
+hide_edge_borders smart
+
+bindsym $mod+End exec eject -T
+bindsym $mod+Insert exec "setxkbmap -layout 'us' -variant 'dvorak'"
+bindsym $mod+Shift+Insert  exec "setxkbmap -layout 'us' -variant ''"
+
+
+bindsym Print exec --no-startup-id scrot -s /tmp/screenshot.png
+bindsym Shift+Print exec --no-startup-id xclip -selection clipboard -t image/png -i /tmp/screenshot.png
+
+bindsym $mod+Shift+g exec --no-startup-id xrandr --output HDMI-A-1 --mode 3840x2160 --output HDMI-A-0 --pos 3840x0
+bindsym $mod+g exec --no-startup-id xrandr --output HDMI-A-1 --mode 1920x1080 --output HDMI-A-0 --pos 1920x0
+bindsym $mod+Shift+c exec --no-startup-id xrandr --output HDMI-A-0 --rotate normal
+bindsym $mod+c exec --no-startup-id xrandr --output HDMI-A-0 --rotate left
+
+bindsym $mod+Home exec --no-startup-id xrandr --output HDMI-A-1 --auto --output HDMI-2 --auto
+bindsym $mod+Shift+Home exec --no-startup-id xrandr --output HDMI-A-1 --off --output HDMI-2 --off
+
+bindsym Mod1+$mod+Return exec --no-startup-id /bin/sh -c 'mpv "$(xclip -o -selection clipboard)"'

@@ -47,7 +47,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias rudeps="pacman -Qtdq | trizen -Rns -"
 alias ssh="TERM=xterm-256color ssh"
-alias sway="TERMINAL=/bin/foot sway"
+#alias sway="TERMINAL=/bin/foot sway"
+alias sway="TERMINAL=/bin/zutty startx" # ii don't remember what i did to autostart sway
+alias rsync_progress="rsync -ah --progress"
 yt-get(){
 for l in "$@"; do;echo `youtube-dl --download-archive /dev/null --output '%(upload_date)s.%(title)s.%(id)s.%(ext)s' -qf 22 $l || echo "FAILED: $l"` &; done
 }
