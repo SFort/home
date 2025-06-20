@@ -1,5 +1,5 @@
 JAVA_HOME=/lib/jvm/java-17-openjdk
-_JAVA_OPTIONS=-Dorg.lwjgl.glfw.libname=glfw_wayland_minecraft
-QT_QPA_PLATFORM=wayland
+_JAVA_AWT_WM_NONREPARENTING=1
+#QT_QPA_PLATFORM=wayland
 QT_QPA_PLATFORMTHEME=qt6ct
 GTK_USE_PORTAL=1
