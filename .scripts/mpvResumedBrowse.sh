@@ -5,9 +5,12 @@ mpv --pause --terminal=no --input-terminal=no --idle=yes --force-window=immediat
 sleep 1
 LAST_DATE_FILE="./browseDate"
 LAST_DATE=$(cat "$LAST_DATE_FILE" 2>/dev/null || echo "0")
-for TFILE in $(find "$FOLDER" -type f -printf "%T@ %p\n" | sort -n | cut -d' ' -f2-); do
-FILE=$(echo "$TFILE" | cut -d' ' -f2-)
-TIME=$(echo "$TFILE" | cut -d' ' -f1)
+IFS= readarray -d '' sorted_files < <(
+  find "$FOLDER" -type f -printf "%T@|%p\0" | sort -z -n
+)
+for TFILE in "${sorted_files[@]}"; do
+FILE="${TFILE#*|}"
+TIME="${TFILE%%|*}"
 [[ "$TIME" < "$LAST_DATE" ]] && continue
 unset DELETE
  echo -en "\033[1A\033[2K\033[1A\033[2K  $FILE Delete? [y/N]"
