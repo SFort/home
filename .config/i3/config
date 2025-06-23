@@ -4,6 +4,7 @@ set $mod Mod4
 
 exec_always --no-startup-id xsetroot -cursor_name left_ptr
 exec "setxkbmap -layout 'us' -variant 'dvorak'"
+exec --no-startup-id numlockx on
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -158,7 +159,7 @@ bindsym $mod+g exec --no-startup-id xrandr --output HDMI-A-1 --mode 1920x1080 --
 bindsym $mod+Shift+c exec --no-startup-id xrandr --output HDMI-A-0 --rotate normal
 bindsym $mod+c exec --no-startup-id xrandr --output HDMI-A-0 --rotate left
 
-bindsym $mod+Home exec --no-startup-id xrandr --output HDMI-A-1 --auto --output HDMI-2 --auto
-bindsym $mod+Shift+Home exec --no-startup-id xrandr --output HDMI-A-1 --off --output HDMI-2 --off
+bindsym $mod+Home exec --no-startup-id xrandr --output HDMI-A-1 --auto --output HDMI-A-0 --auto
+bindsym $mod+Shift+Home exec --no-startup-id xrandr --output HDMI-A-1 --off --output HDMI-A-0 --off
 
 bindsym Mod1+$mod+Return exec --no-startup-id /bin/sh -c 'mpv "$(xclip -o -selection clipboard)"'
