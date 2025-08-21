@@ -159,9 +159,9 @@ bindsym $mod+g exec --no-startup-id xrandr --output HDMI-A-1 --mode 1920x1080 --
 bindsym $mod+Shift+c exec --no-startup-id xrandr --output HDMI-A-0 --rotate normal
 bindsym $mod+c exec --no-startup-id xrandr --output HDMI-A-0 --rotate left
 
-exec xset -dpms
+exec --no-startup-id xset -dpms
 
 bindsym $mod+Shift+Home exec --no-startup-id xset dpms 0 0 1
-bindsym $mod+Shift exec --no-startup-id xset -dpms
+bindsym $mod+Home exec --no-startup-id xset -dpms
 
 bindsym Mod1+$mod+Return exec --no-startup-id /bin/sh -c 'mpv "$(xclip -o -selection clipboard)"'
